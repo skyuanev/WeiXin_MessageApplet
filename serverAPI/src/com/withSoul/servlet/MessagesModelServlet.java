@@ -69,7 +69,7 @@ public class MessagesModelServlet extends HttpServlet {
 		String g_id = jsonobject.getString("g_id");//公众号id
 //		System.out.println("更新formid成功！");
 		String selectOpenid = "select formid,openid,token from messages where p_id = "+p_id+"";
-		List list = Tools.executeQuary(selectOpenid);
+		List list = Tools.executeQuery(selectOpenid);
 		String updateFormid = "update gonginfo set formid= '"+upformid+"' where id="+g_id+"";
 		int count = Tools.executeUpdate(updateFormid);
 		if(count>0){

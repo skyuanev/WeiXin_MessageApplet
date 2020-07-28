@@ -68,7 +68,7 @@ public class RealyMessagesList extends HttpServlet {
 			String openid = jsonobject.getString("openid"); //用户openid
 			System.out.println("文章编号为:  "+ no);
 			String queueSql = "select * from messages where no = "+no+" and isCheck = 1 and g_id = "+g_id+" ORDER BY messages.istop DESC ";
-			List list = Tools.executeQuary(queueSql);
+			List list = Tools.executeQuery(queueSql);
 
 			if(list!=null){
 				//存储返回小程序留言信息List
@@ -93,8 +93,8 @@ public class RealyMessagesList extends HttpServlet {
 					messlist.add(messagebean);
 				}
 				
-				String querezan = "select p_id from zan where no = "+no+" and g_id = "+g_id+" and openid='"+openid+"'";
-				List zanlist = Tools.executeQuary(querezan);
+				String queryzan = "select p_id from zan where no = "+no+" and g_id = "+g_id+" and openid='"+openid+"'";
+				List zanlist = Tools.executeQuery(queryzan);
 				System.out.print("zan表"+zanlist);
 				if(zanlist.size()>0){
 					Map zanmap = new HashMap();
@@ -137,8 +137,8 @@ public class RealyMessagesList extends HttpServlet {
 			String no = jsonobject.getString("no");//文章编号
 			String queueSql = "select * from messages where no = '"+no+"' and g_id ='"+g_id+"'";
 			String countsql = "select COUNT(*) from messages where no = '"+no+"'";
-			List list = Tools.executeQuary(queueSql);
-			List countlist = Tools.executeQuary(countsql);
+			List list = Tools.executeQuery(queueSql);
+			List countlist = Tools.executeQuery(countsql);
 			System.out.println("countlist"+list);
 			if(list.size()>0){
 				Map m = (Map) countlist.get(0);

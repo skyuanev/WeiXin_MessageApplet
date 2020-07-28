@@ -52,7 +52,7 @@ public class IdentifyGetGidServlet extends HttpServlet {
 		
 		String querySql = "select * from gonginfo where password = '"+password+"'";
 		
-		List list = Tools.executeQuary(querySql);
+		List list = Tools.executeQuery(querySql);
 		System.out.print("²éÑ¯³É¹¦"+list);
 		if(list.size()>0){
 			JSONObject jsonObject2 = new JSONObject();

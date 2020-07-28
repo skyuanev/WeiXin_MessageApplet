@@ -77,7 +77,7 @@ public class ArticleListServlet extends HttpServlet {
 		}else{
 			//根据公众号 id 查询文章列表
 			String selectsql = "Select * from articel where g_id = "+ id +" order by no desc";
-			List list = Tools.executeQuary(selectsql);
+			List list = Tools.executeQuery(selectsql);
 			
 			if(list.size()>0){
 				JSONObject jsonObject2 = new JSONObject();

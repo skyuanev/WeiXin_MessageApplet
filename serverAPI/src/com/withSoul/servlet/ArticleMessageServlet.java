@@ -105,7 +105,7 @@ public class ArticleMessageServlet extends HttpServlet {
 		}else{
 			
 			String selectSql= "select * from article where title = '"+title+"' and describ = '"+describ+"'and g_id='"+id+"'";
-			List list = Tools.executeQuary(selectSql);
+			List list = Tools.executeQuery(selectSql);
 			
 			if(list.size()>0){
 				JSONObject jsonObject1=new JSONObject();

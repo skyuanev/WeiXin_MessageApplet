@@ -15,7 +15,7 @@ import com.withSoul.util.Util;
 public class Tools {
 	
 	//查询
-	public static List executeQuary(String sql, Object... objects) {
+	public static List executeQuery(String sql, Object... objects) {
 		List li=new ArrayList();
 		ResultSet rs;
 		try {

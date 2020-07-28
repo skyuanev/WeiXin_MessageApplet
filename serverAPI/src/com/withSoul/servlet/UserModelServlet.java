@@ -65,7 +65,7 @@ public class UserModelServlet extends HttpServlet {
 
 
 		String selectOpenid = "select formid,token,openid from gonginfo where id = "+g_id+"";
-		List list = Tools.executeQuary(selectOpenid);
+		List list = Tools.executeQuery(selectOpenid);
 		
 		if(list.size()>0){
 			Map map = new HashMap();

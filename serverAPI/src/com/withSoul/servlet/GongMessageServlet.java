@@ -35,7 +35,7 @@ public class GongMessageServlet extends HttpServlet {
 		
 		String selectGong = "select * from gonginfo";
 		
-		List list = Tools.executeQuary(selectGong);
+		List list = Tools.executeQuery(selectGong);
 		
 		if(list.size()>0){
 			JSONArray jsonArray = JSONArray.fromObject(list);
